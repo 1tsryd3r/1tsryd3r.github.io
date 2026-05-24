@@ -7,8 +7,8 @@ layout: default
         <h1 class="post-title">{{ page.title }}</h1>
         <div class="post-meta">
             <span
-                >{{ page.display_date | default: page.date | date: "%Y-%m-%d"
-                }}</span
+                >{% if page.display_date %}{{ page.display_date }}{% else %}{{
+                page.date | date: "%Y-%m-%d" }}{% endif %}</span
             >
             {% if page.event %}<span>{{ page.event }}</span>{% endif %} {% if
             page.tags %}
