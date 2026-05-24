@@ -270,9 +270,9 @@ header {
     display: inline-block;
     font-family: var(--mono);
     font-size: 0.9rem;
-    background: #0a1f1a;
-    border: 1px solid var(--accent);
-    color: var(--accent);
+    background: #0a0a1f;
+    border: 1px solid var(--accent2);
+    color: var(--accent2);
     padding: 0.6rem 1rem;
     border-radius: 4px;
     margin-top: 0.5rem;
