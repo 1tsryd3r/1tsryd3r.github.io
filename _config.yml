@@ -1,0 +1,30 @@
+title: "ryd3r"
+description: "CTF challenge writeups"
+url: "https://1tsryd3r.github.io"
+baseurl: ""
+author:
+  name: ryd3r
+  github: 1tsryd3r
+
+permalink: /writeups/:year/:month/:day/:title/
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+  math_engine: katex
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/

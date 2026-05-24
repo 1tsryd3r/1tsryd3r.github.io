@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem">
+      <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      {% if post.tags %}
+      <span class="post-tags">
+        {% for tag in post.tags limit:2 %}<span class="tag">{{ tag }}</span>{% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </li>
+  {% else %}
+  <li style="color:var(--muted);padding:1rem 0">No writeups yet.</li>
+  {% endfor %}
+</ul>
