@@ -8,7 +8,7 @@ baseurl: ""
 author:
   name: ryd3r
   github: 1tsryd3r
-  discord: "yourdiscordusername" # set to your handle, or remove this line
+  discord: "718448145520132128"
 
 permalink: /writeups/:year/:month/:day/:title/
 
