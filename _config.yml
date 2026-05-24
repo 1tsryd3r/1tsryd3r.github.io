@@ -2,7 +2,7 @@ future: true
 timezone: Asia/Kolkata
 
 title: "ryd3r"
-description: "CTF challenge writeups"
+description: "CTF writeups"
 url: "https://1tsryd3r.github.io"
 baseurl: ""
 author:
