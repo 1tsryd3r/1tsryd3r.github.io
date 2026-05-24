@@ -1,5 +1,7 @@
 /* ── Fonts ─────────────────────────────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Oxanium:wght@400;700;800&display=swap"); /* ── Variables ──────────────────────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Oxanium:wght@400;700;800&display=swap");
+
+/* ── Variables ──────────────────────────────────────────────── */
 :root {
     --bg: #0d0d0f;
     --surface: #141418;
@@ -7,13 +9,11 @@
     --muted: #444450;
     --text: #c8c8d4;
     --bright: #eeeef5;
-    --accent: #7fdbca; /* teal — swap to #f97316 for orange etc */
-    --accent2: #a78bfa; /* purple for tags */
-    --danger: #ff6b6b;
+    --accent: #7fdbca;
+    --accent2: #a78bfa;
     --mono: "JetBrains Mono", monospace;
-    --sans: "Syne", sans-serif;
+    --sans: "Oxanium", sans-serif;
     --max-w: 720px;
-    --gap: 2rem;
 }
 
 /* ── Reset ──────────────────────────────────────────────────── */
@@ -55,7 +55,7 @@ header {
 .site-title {
     font-family: var(--sans);
     font-weight: 800;
-    font-size: 1.35rem;
+    font-size: 1.5rem;
     color: var(--bright);
     text-decoration: none;
     letter-spacing: -0.03em;
@@ -66,10 +66,10 @@ header {
 }
 
 .site-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     color: var(--muted);
-    margin-top: 0.2rem;
-    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
@@ -79,11 +79,6 @@ header {
 }
 
 .post-list li {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: baseline;
-    gap: 1rem;
-    padding: 0.9rem 0;
     border-bottom: 1px solid var(--border);
 }
 
@@ -91,23 +86,53 @@ header {
     border-top: 1px solid var(--border);
 }
 
-.post-list a {
-    color: var(--bright);
+/* Entire row is clickable */
+.post-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 0.5rem;
     text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+    margin: 0 -0.5rem;
+}
+
+.post-row:hover {
+    background: var(--surface);
+}
+
+.post-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.post-title-text {
     font-family: var(--sans);
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: var(--bright);
     transition: color 0.15s;
 }
 
-.post-list a:hover {
+.post-row:hover .post-title-text {
     color: var(--accent);
 }
 
-.post-list .post-tags {
+.post-event-sub {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.post-right {
     display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
 }
 
 .post-date {
@@ -117,10 +142,17 @@ header {
     letter-spacing: 0.04em;
 }
 
+.post-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
 /* ── Tags ───────────────────────────────────────────────────── */
 .tag {
     display: inline-block;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     padding: 0.15em 0.55em;
     border: 1px solid var(--accent2);
     color: var(--accent2);
@@ -137,10 +169,18 @@ header {
 .post-title {
     font-family: var(--sans);
     font-weight: 800;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.75rem, 5vw, 2.4rem);
     color: var(--bright);
     letter-spacing: -0.03em;
-    line-height: 1.2;
+    line-height: 1.15;
+    margin-bottom: 0.3rem;
+}
+
+.post-event {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     margin-bottom: 0.75rem;
 }
 
@@ -188,7 +228,7 @@ header {
     color: var(--bright);
 }
 
-/* ── Blockquote (challenge description) ─────────────────────── */
+/* ── Blockquote ─────────────────────────────────────────────── */
 .post-content blockquote {
     border-left: 3px solid var(--accent);
     margin: 1.5rem 0;
@@ -223,13 +263,6 @@ header {
     color: var(--accent);
 }
 
-/* Rouge line numbers */
-.highlight .gutter {
-    color: var(--muted);
-    user-select: none;
-    padding-right: 1rem;
-}
-
 /* ── Flag box ───────────────────────────────────────────────── */
 .flag {
     display: inline-block;
@@ -259,11 +292,34 @@ footer {
     color: var(--muted);
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-footer a {
-    color: var(--muted);
+.footer-copy {
+    letter-spacing: 0.03em;
 }
-footer a:hover {
+
+.footer-links {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+}
+
+.footer-links a {
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.15s;
+}
+
+.footer-links a:hover {
     color: var(--accent);
+}
+
+.footer-icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
 }

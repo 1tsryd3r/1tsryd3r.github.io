@@ -8,6 +8,7 @@ baseurl: ""
 author:
   name: ryd3r
   github: 1tsryd3r
+  discord: "yourdiscordusername" # set to your handle, or remove this line
 
 permalink: /writeups/:year/:month/:day/:title/
 
@@ -19,8 +20,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: true
-  math_engine: katex
+      line_numbers: false
 
 plugins:
   - jekyll-feed
