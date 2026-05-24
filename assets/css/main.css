@@ -3,14 +3,14 @@
 
 /* ── Variables ──────────────────────────────────────────────── */
 :root {
-    --bg: #0d0d0f;
-    --surface: #141418;
-    --border: #222228;
-    --muted: #444450;
-    --text: #c8c8d4;
-    --bright: #eeeef5;
-    --accent: #7fdbca;
-    --accent2: #a78bfa;
+    --bg: #1a1b26;
+    --surface: #24283b;
+    --border: #2f3549;
+    --muted: #565f89;
+    --text: #a9b1d6;
+    --bright: #c0caf5;
+    --accent: #7dcfff;
+    --accent2: #bb9af7;
     --mono: "JetBrains Mono", monospace;
     --sans: "Oxanium", sans-serif;
     --max-w: 720px;
