@@ -3,14 +3,14 @@
 
 /* ── Variables ──────────────────────────────────────────────── */
 :root {
-    --bg: #1a1b26;
-    --surface: #24283b;
-    --border: #2f3549;
-    --muted: #565f89;
-    --text: #a9b1d6;
-    --bright: #c0caf5;
-    --accent: #7dcfff;
-    --accent2: #bb9af7;
+    --bg: #0a0a10;
+    --surface: #10101a;
+    --border: #1e1e32;
+    --muted: #404060;
+    --text: #a8a8c8;
+    --bright: #e8e8ff;
+    --accent: #cc2244;
+    --accent2: #6688ee;
     --mono: "JetBrains Mono", monospace;
     --sans: "Oxanium", sans-serif;
     --max-w: 720px;
@@ -67,7 +67,7 @@ header {
 
 .site-subtitle {
     font-size: 0.72rem;
-    color: var(--muted);
+    color: #7a7a9a; /* brighter than --muted */
     margin-top: 0.25rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -122,10 +122,11 @@ header {
 }
 
 .post-event-sub {
-    font-size: 0.7rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    color: #7a7a9a; /* was var(--muted) */
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    margin-bottom: 0.75rem;
 }
 
 .post-right {
@@ -136,10 +137,11 @@ header {
 }
 
 .post-date {
-    font-size: 0.72rem;
-    color: var(--muted);
-    white-space: nowrap;
-    letter-spacing: 0.04em;
+    font-size: 0.75rem;
+    color: #7a7a9a; /* was var(--muted) */
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
 }
 
 .post-tags {
@@ -178,7 +180,7 @@ header {
 
 .post-event {
     font-size: 0.75rem;
-    color: var(--muted);
+    color: #7a7a9a; /* was var(--muted) */
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
@@ -186,7 +188,7 @@ header {
 
 .post-meta {
     font-size: 0.75rem;
-    color: var(--muted);
+    color: #7a7a9a; /* was var(--muted) */
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -231,8 +233,8 @@ header {
 /* ── Blockquote ─────────────────────────────────────────────── */
 .post-content blockquote {
     border-left: 3px solid var(--accent);
-    margin: 1.5rem 0;
-    padding: 0.75rem 1.25rem;
+    margin: 1rem 0;
+    padding: 0rem 0.4rem;
     background: var(--surface);
     color: var(--text);
     border-radius: 0 4px 4px 0;
@@ -322,4 +324,11 @@ footer {
     width: 13px;
     height: 13px;
     flex-shrink: 0;
+}
+
+/* ── Horizontal Rule ────────────────────────────────────────── */
+.post-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1.5rem 0;
 }
