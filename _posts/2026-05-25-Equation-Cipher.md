@@ -19,7 +19,7 @@ difficulty: Medium
 
 - The equation is explained neatly through the solve script, `expand(prod(p*x - ord(c) for p, c in zip(ps, FLAG)))` where `ps = prime_range(200)`.
 - `ps` is a list of primes lesser than 200, and `x` is a Sagemath variable. The `expand()` function multiplies all the elements in `prod(p*x - c)` as `(p1*x1 - c1) * (p2*x2 - c2) ...`.
-- Equation this to 0 gives us `p*x - c = 0` or `x = c/p`.
+- Equating this to 0 gives us `p*x - c = 0` or `x = c/p`.
 - We can use Sagemath's `solve()` function to find all the 30 `x` values, but these values are not in order, so to ensure we use the right `p` for an `x`, we check if `p*x` is an integer. If it is, then that is the right pairing and we have the corresponding flag character.
 - We know the sequence of `p` so we can arrange the `c`'s correctly.
 
