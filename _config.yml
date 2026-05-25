@@ -1,6 +1,5 @@
 future: true
 timezone: Asia/Kolkata
-
 title: "ryd3r"
 description: "CTF writeups"
 url: "https://1tsryd3r.github.io"
@@ -9,23 +8,19 @@ author:
   name: ryd3r
   github: 1tsryd3r
   discord: "718448145520132128"
-
 permalink: /writeups/:year/:month/:day/:title/
-
 markdown: kramdown
 highlighter: rouge
-
 kramdown:
+  math_engine: mathjax
   input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
       line_numbers: false
-
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
 exclude:
   - Gemfile
   - Gemfile.lock

@@ -332,3 +332,79 @@ footer {
     border-top: 1px solid var(--border);
     margin: 1.5rem 0;
 }
+
+/* ── Syntax Highlighting (Rouge overrides) ───────────────────── */
+.highlight {
+    background: var(--surface) !important;
+}
+
+/* keywords: if, def, class, import, from */
+.highlight .k,
+.highlight .kn,
+.highlight .kd,
+.highlight .kr {
+    color: #6688ee;
+}
+
+/* strings */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sa,
+.highlight .sb,
+.highlight .sc {
+    color: #88bb66;
+}
+
+/* comments */
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cs,
+.highlight .cp {
+    color: #404060;
+    font-style: italic;
+}
+
+/* numbers */
+.highlight .mi,
+.highlight .mf,
+.highlight .mh,
+.highlight .mo,
+.highlight .mb {
+    color: #cc8844;
+}
+
+/* functions */
+.highlight .nf,
+.highlight .nb {
+    color: #88aadd;
+}
+
+/* class names */
+.highlight .nc {
+    color: #ddaa66;
+}
+
+/* True, False, None */
+.highlight .kc,
+.highlight .bp {
+    color: #cc6688;
+}
+
+/* operators */
+.highlight .o,
+.highlight .ow {
+    color: #a8a8c8;
+}
+
+/* plain text/variables */
+.highlight .n,
+.highlight .nn {
+    color: #c8c8e8;
+}
+
+/* punctuation */
+.highlight .p {
+    color: #a8a8c8;
+}
