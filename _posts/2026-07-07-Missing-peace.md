@@ -2,21 +2,22 @@
 layout: post
 title: "Missing Peace"
 event: "B-Sides"
-date: 2026-07-07
+date: 2026-07-07 02:00:00
 tags: [Mod math]
 difficulty: Hard
 ---
 
 ## Challenge Description
 
-> P says it wants to become like a share, too.
+> P says it wants to become like a share, too. <br>
 > NOTE: This is a related challenge to 3-peace.
 
 **Attachments:** `chall.py`, `output.txt`
 
 ## Analysis of chall.py
 - We can see only 2 differences from the previous challenge `3-peace`, we don't know `P` and we are given 10 outputs instead of 3.
-```
+
+```python3
 P = getPrime(512)
 coeffs = [flag] + [secrets.randbelow(P - 1) + 1 for _ in range(THRESHOLD - 1)]
 
@@ -30,16 +31,16 @@ shares = [(x, f(x)) for x in range(1, SHARES + 1)]
 ## The Exploit
 - We can take consecutive differences of the outputs, and get -
 ```python3
-a = num1 + 3 * num2 mod p
-b = num1 + 5 * num2 mod p
-c = num1 + 7 * num2 mod p
-d = num1 + 9 * num2 mod p
+a = f(2) - f(1) = num1 + 3 * num2 mod p
+b = f(3) - f(2) = num1 + 5 * num2 mod p
+c = f(4) - f(3) = num1 + 7 * num2 mod p
+d = f(5) - f(4) = num1 + 9 * num2 mod p
 ```
 - Taking further consecutive differences of these we get -
 ```python3
-A = b - a = 2*num2 mod p
-B = c - b = 2*num2 mod p
-C = d - c = 2*num2 mod p
+A = b - a = 2 * num2 mod p
+B = c - b = 2 * num2 mod p
+C = d - c = 2 * num2 mod p
 ```
 - Taking one final consecutive difference,
 ```python3
