@@ -24,6 +24,7 @@
     margin: 0;
     padding: 0;
 }
+
 html {
     font-size: 16px;
     scroll-behavior: smooth;
@@ -67,7 +68,8 @@ header {
 
 .site-subtitle {
     font-size: 0.72rem;
-    color: #7a7a9a; /* brighter than --muted */
+    color: #7a7a9a;
+    /* brighter than --muted */
     margin-top: 0.25rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -123,7 +125,8 @@ header {
 
 .post-event-sub {
     font-size: 0.75rem;
-    color: #7a7a9a; /* was var(--muted) */
+    color: #7a7a9a;
+    /* was var(--muted) */
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
@@ -138,7 +141,8 @@ header {
 
 .post-date {
     font-size: 0.75rem;
-    color: #7a7a9a; /* was var(--muted) */
+    color: #7a7a9a;
+    /* was var(--muted) */
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
@@ -180,7 +184,8 @@ header {
 
 .post-event {
     font-size: 0.75rem;
-    color: #7a7a9a; /* was var(--muted) */
+    color: #7a7a9a;
+    /* was var(--muted) */
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.75rem;
@@ -188,7 +193,8 @@ header {
 
 .post-meta {
     font-size: 0.75rem;
-    color: #7a7a9a; /* was var(--muted) */
+    color: #7a7a9a;
+    /* was var(--muted) */
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -256,7 +262,7 @@ header {
     font-family: var(--mono);
 }
 
-.post-content :not(pre) > code {
+.post-content :not(pre)>code {
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 0.1em 0.45em;
@@ -407,4 +413,81 @@ footer {
 /* punctuation */
 .highlight .p {
     color: #a8a8c8;
+}
+
+/* --- chall.py dropdown (append to assets/css/main.css) --- */
+
+.chall-dropdown {
+    margin: 1.25rem 0;
+    border: 1px solid var(--border, #2a2a2a);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bg-alt, #111111);
+    outline: none;
+}
+
+.chall-dropdown:focus,
+.chall-dropdown:focus-visible {
+    outline: none;
+}
+
+.chall-summary {
+    outline: none;
+}
+
+.chall-summary:focus,
+.chall-summary:focus-visible {
+    outline: none;
+}
+
+.chall-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 1rem;
+    cursor: pointer;
+    list-style: none;
+    font-family: monospace;
+    font-size: 0.95rem;
+    color: var(--accent, #e06c75);
+    user-select: none;
+}
+
+.chall-summary::-webkit-details-marker {
+    display: none;
+}
+
+.chall-summary-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chall-filename {
+    color: var(--accent, #e06c75);
+}
+
+.chall-caret {
+    color: var(--muted, #888);
+    transition: transform 0.15s ease;
+}
+
+.chall-dropdown[open] .chall-caret {
+    transform: rotate(90deg);
+}
+
+.chall-dropdown:hover {
+    border-color: var(--accent, #e06c75);
+}
+
+.chall-body {
+    border-top: 1px solid var(--border, #2a2a2a);
+    max-height: 480px;
+    overflow: auto;
+}
+
+.chall-body .highlight,
+.chall-body pre {
+    margin: 0;
+    border-radius: 0;
 }

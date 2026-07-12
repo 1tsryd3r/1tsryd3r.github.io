@@ -1,0 +1,57 @@
+{%- comment -%}
+  Usage (inside a post .md file, in place of a static "Attachments:" line):
+
+    {% include chall-dropdown.html file="r3ticket.py" %}
+
+  Optional second param to override the highlighter language (defaults to python).
+  Supported values below - add more `when` branches as needed:
+
+    {% include chall-dropdown.html file="server.js" lang="javascript" %}
+
+  Looks for the source file at: _includes/challs/<file>
+{%- endcomment -%}
+{%- assign chall_lang = include.lang | default: "python" -%}
+<details class="chall-dropdown">
+    <summary class="chall-summary">
+        <span class="chall-summary-left">
+            <span class="chall-filename">chall.py</span>
+        </span>
+        <span class="chall-caret">▸</span>
+    </summary>
+    <div class="chall-body">
+        {%- case chall_lang -%}
+        {%- when "python" -%}
+            {% highlight python %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- when "javascript" -%}
+            {% highlight javascript %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- when "c" -%}
+            {% highlight c %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- when "cpp" -%}
+            {% highlight cpp %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- when "bash" -%}
+            {% highlight bash %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- when "go" -%}
+            {% highlight go %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- when "plaintext" -%}
+            {% highlight plaintext %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- else -%}
+            {% highlight python %}
+{% include challs/{{ include.file }} %}
+            {% endhighlight %}
+        {%- endcase -%}
+    </div>
+</details>
