@@ -167,14 +167,15 @@ html[data-theme="light"] .icon-moon {
 /* ── Post List (Homepage) ────────────────────────────────────── */
 .post-list {
     list-style: none;
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 1rem;
+    overscroll-behavior: contain;
 }
 
 .post-list li {
     border-bottom: 1px solid var(--border);
-}
-
-.post-list li:first-child {
-    border-top: 1px solid var(--border);
 }
 
 /* Entire row is clickable */
@@ -187,7 +188,6 @@ html[data-theme="light"] .icon-moon {
     text-decoration: none;
     border-radius: 4px;
     transition: background 0.15s;
-    margin: 0 -0.5rem;
 }
 
 .post-row:hover {
@@ -431,60 +431,98 @@ footer {
 /* ── Syntax Highlighting (Rouge overrides) ───────────────────── */
 .highlight {
     background: var(--code-bg) !important;
+    color: var(--syn-var);
+}
+
+/* generic text / whitespace */
+.highlight .n,
+.highlight .w {
+    color: var(--syn-var);
 }
 
 /* keywords: if, def, class, import, from */
 .highlight .k,
 .highlight .kn,
-.highlight .kd,
-.highlight .kr {
+.highlight .kp,
+.highlight .kr,
+.highlight .kv {
     color: var(--syn-keyword);
+}
+
+/* names/declarations, preprocessor, bullets */
+.highlight .kd,
+.highlight .kt,
+.highlight .cp,
+.highlight .gh {
+    color: var(--syn-class);
+}
+
+/* constants: True, False, None, self */
+.highlight .kc,
+.highlight .bp,
+.highlight .sa,
+.highlight .err {
+    color: var(--syn-bool);
 }
 
 /* strings */
 .highlight .s,
 .highlight .s1,
 .highlight .s2,
-.highlight .sa,
 .highlight .sb,
-.highlight .sc {
+.highlight .sc,
+.highlight .dl,
+.highlight .sd,
+.highlight .sh,
+.highlight .sr,
+.highlight .ss,
+.highlight .sx {
     color: var(--syn-string);
+}
+
+/* escape / interpolations inside strings */
+.highlight .si,
+.highlight .se {
+    color: var(--syn-number);
 }
 
 /* comments */
 .highlight .c,
 .highlight .c1,
+.highlight .ch,
+.highlight .cd,
 .highlight .cm,
-.highlight .cs,
-.highlight .cp {
+.highlight .cpf,
+.highlight .cs {
     color: var(--syn-comment);
     font-style: italic;
 }
 
 /* numbers */
-.highlight .mi,
+.highlight .m,
+.highlight .mb,
 .highlight .mf,
 .highlight .mh,
+.highlight .mi,
+.highlight .il,
 .highlight .mo,
-.highlight .mb {
+.highlight .mx {
     color: var(--syn-number);
 }
 
-/* functions */
+/* functions / attributes */
 .highlight .nf,
-.highlight .nb {
+.highlight .nb,
+.highlight .na,
+.highlight .nt {
     color: var(--syn-func);
 }
 
-/* class names */
-.highlight .nc {
+/* class / namespace names */
+.highlight .nc,
+.highlight .nn,
+.highlight .no {
     color: var(--syn-class);
-}
-
-/* True, False, None */
-.highlight .kc,
-.highlight .bp {
-    color: var(--syn-bool);
 }
 
 /* operators */
@@ -493,15 +531,32 @@ footer {
     color: var(--syn-op);
 }
 
-/* plain text/variables */
-.highlight .n,
-.highlight .nn {
-    color: var(--syn-var);
+/* punctuation: brackets, commas, parens */
+.highlight .p,
+.highlight .pi {
+    color: var(--syn-punct);
 }
 
-/* punctuation */
-.highlight .p {
-    color: var(--syn-punct);
+/* diff / format runs */
+.highlight .gi {
+    color: var(--syn-string);
+}
+
+.highlight .gd {
+    color: var(--syn-bool);
+}
+
+.highlight .ge {
+    font-style: italic;
+}
+
+.highlight .ges {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.highlight .gs {
+    font-weight: bold;
 }
 
 /* --- chall.py dropdown (append to assets/css/main.css) --- */
