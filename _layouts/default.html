@@ -12,13 +12,14 @@
                     >
                     <div class="site-subtitle">{{ site.description }}</div>
                 </div>
-                <button
-                    id="theme-toggle"
-                    class="theme-toggle"
-                    type="button"
-                    aria-label="Switch to light mode"
-                    title="Switch to light mode"
-                >
+                <div class="site-actions">
+                    <button
+                        id="theme-toggle"
+                        class="theme-toggle"
+                        type="button"
+                        aria-label="Switch to light mode"
+                        title="Switch to light mode"
+                    >
                     <svg
                         class="icon-sun"
                         viewBox="0 0 24 24"
@@ -54,6 +55,12 @@
                         />
                     </svg>
                 </button>
+                    <a
+                        class="site-nav-link"
+                        href="{{ '/about/' | relative_url }}"
+                        {% if page.url == "/about/" %}aria-current="page"{% endif %}
+                    >about</a>
+                </div>
             </header>
             <main>{{ content }}</main>
             <footer>
