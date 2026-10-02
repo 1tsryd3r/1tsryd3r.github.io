@@ -10,7 +10,18 @@
                     <a class="site-title" href="{{ '/' | relative_url }}"
                         ><span>/</span>{{ site.title }}</a
                     >
-                    <div class="site-subtitle">{{ site.description }}</div>
+                    <nav class="site-mini-nav">
+                        <a
+                            class="site-mini-link"
+                            href="{{ '/writeups/' | relative_url }}"
+                            {% if page.url == "/writeups/" %}aria-current="page"{% endif %}
+                        ><span class="landing-slash">./</span>writeups</a>
+                        <a
+                            class="site-mini-link"
+                            href="{{ '/blogs/' | relative_url }}"
+                            {% if page.url == "/blogs/" %}aria-current="page"{% endif %}
+                        ><span class="landing-slash">./</span>blogs</a>
+                    </nav>
                 </div>
                 <div class="site-actions">
                     <button
@@ -55,11 +66,6 @@
                         />
                     </svg>
                 </button>
-                    <a
-                        class="site-nav-link"
-                        href="{{ '/about/' | relative_url }}"
-                        {% if page.url == "/about/" %}aria-current="page"{% endif %}
-                    >about</a>
                 </div>
             </header>
             <main>{{ content }}</main>

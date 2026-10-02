@@ -117,16 +117,25 @@ header {
     color: var(--accent);
 }
 
-.site-subtitle {
-    font-size: 0.72rem;
-    color: var(--muted-2);
-    /* brighter than --muted */
-    margin-top: 0.25rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+/* ── Site mini-nav (under the title) ─────────────────────────── */
+.site-mini-nav {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 0.35rem;
 }
 
-/* ── Site Actions (nav + theme toggle) ───────────────────────── */
+.site-mini-link {
+    font-size: 0.8rem;
+    color: var(--muted-2);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.site-mini-link:hover {
+    color: var(--bright);
+}
+
+/* ── Site Actions (theme toggle) ─────────────────────────────── */
 .site-actions {
     display: flex;
     flex-direction: column;
@@ -136,16 +145,29 @@ header {
     padding-top: 0.35rem;
 }
 
-.site-nav-link {
-    font-size: 0.72rem;
-    color: var(--muted-2);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: color 0.15s;
+/* ── Landing page ────────────────────────────────────────────── */
+.page-title {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    letter-spacing: -0.03em;
+    color: var(--bright);
+    margin-bottom: 1.25rem;
 }
 
-.site-nav-link:hover {
+.page-intro {
+    max-width: 58ch;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.page-detail-line {
+    color: var(--muted-2);
+    margin-bottom: 0.35rem;
+}
+
+/* ── Landing slash (header + page uses) ──────────────────────── */
+.landing-slash {
     color: var(--accent);
 }
 
