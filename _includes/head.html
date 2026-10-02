@@ -37,4 +37,12 @@
         })
     "
 ></script>
+<script>
+    (function () {
+        try {
+            var theme = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+    })();
+</script>
 {% seo %}
