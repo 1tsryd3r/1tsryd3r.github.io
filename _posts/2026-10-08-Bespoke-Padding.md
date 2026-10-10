@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bespoke Padding"
-tags: [Cryptography, RSA, Math]
+tags: [RSA, Math]
 difficulty: Medium
 ---
 
